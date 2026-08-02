@@ -1,0 +1,34 @@
+.{
+    .name = .libxcb,
+    .version = "1.17.0",
+    .minimum_zig_version = "0.16.0",
+    .dependencies = .{
+        .xcb = .{
+            .url = "https://gitlab.freedesktop.org/xorg/lib/libxcb/-/archive/libxcb-1.17.0/libxcb-libxcb-1.17.0.tar.gz",
+            .hash = "N-V-__8AAPZxCQD7JyQLx0_D9J9dnkSoP7iziBVxreTgUqlj",
+        },
+        .xcbproto = .{
+            .url = "https://gitlab.freedesktop.org/xorg/proto/xcbproto/-/archive/xcb-proto-1.17.0/xcbproto-xcb-proto-1.17.0.tar.gz",
+            .hash = "N-V-__8AAFnMDACdXT5YIakLgEMFZ-K7ZICgB18p8xKobHjk",
+        },
+        .autoconfigheader = .{
+            .url = "https://github.com/akunaakwei/zig-autoconfigheader/archive/8fe4f925cd29f87dc9cafe27382358d0839c9920.tar.gz",
+            .hash = "autoconfigheader-0.0.1-M7E_ZdAvAACUUzXpcsUySSgP_-ACO70YfZhNU7POHk1l",
+        },
+        .xau = .{
+            .url = "https://github.com/akunaakwei/zig-libxau/archive/b103e9a9f790c71e3780bd39bd6e0d7726f1cd9b.tar.gz",
+            .hash = "libxau-1.0.12-9JHeOBULAACzw5bhdDXwHVCnVeApTk7T3Ls7jLFoejJs",
+        },
+        .xorgproto = .{
+            .url = "https://github.com/akunaakwei/zig-xorgproto/archive/9e416e104fa6067538c08e739de2862721a410cc.tar.gz",
+            .hash = "xorgproto-2025.1.0-38NRV9YKAAB8_MV39Y_a1TPHc5p55a8VAmiXDAJgU3t7",
+        },
+    },
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+        "LICENSE",
+    },
+    .fingerprint = 0x7c7745ce9611ad39,
+}
