@@ -63,6 +63,7 @@ pub fn build(b: *std.Build) void {
         .linkage = linkage,
     });
     lib.installHeadersDirectory(xcb_dep.path("src"), "xcb", .{});
+    lib.installHeadersDirectory(xcb_dep.path("src"), ".", .{});
     lib.installHeadersDirectory(b.path("src"), ".", .{});
     b.installArtifact(lib);
 
