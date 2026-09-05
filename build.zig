@@ -56,6 +56,10 @@ pub fn build(b: *std.Build) void {
         .root = xcb_dep.path("src"),
         .files = &sources,
     });
+    mod.addCSourceFiles(.{
+        .root = b.path("src"),
+        .files = &sources_generated,
+    });
 
     const lib = b.addLibrary(.{
         .name = "xcb",
@@ -130,4 +134,39 @@ const proto_sources = .{
     "xtest.xml",
     "xv.xml",
     "xvmc.xml",
+};
+
+const sources_generated = .{
+    "bigreq.c",
+    "composite.c",
+    "damage.c",
+    "dbe.c",
+    "dpms.c",
+    "dri2.c",
+    "dri3.c",
+    "ge.c",
+    "glx.c",
+    "present.c",
+    "randr.c",
+    "record.c",
+    "render.c",
+    "res.c",
+    "screensaver.c",
+    "shape.c",
+    "shm.c",
+    "sync.c",
+    "xc_misc.c",
+    "xevie.c",
+    "xf86dri.c",
+    "xf86vidmode.c",
+    "xfixes.c",
+    "xinerama.c",
+    "xinput.c",
+    "xkb.c",
+    "xprint.c",
+    "xproto.c",
+    "xselinux.c",
+    "xtest.c",
+    "xv.c",
+    "xvmc.c",
 };
