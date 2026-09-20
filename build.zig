@@ -6,6 +6,7 @@ pub fn build(b: *std.Build) void {
     const optimize = b.standardOptimizeOption(.{});
 
     const linkage = b.option(std.builtin.LinkMode, "linkage", "Linkage type for the library") orelse .static;
+    const pic = b.option(bool, "pic", "Enable PIC") orelse (if (linkage == .dynamic) true else null);
     const queue_size = b.option(u32, "queue-size", "Set the XCB buffer queue size (default is 16384)") orelse 16384;
 
     const xcb_dep = b.dependency("xcb", .{});
@@ -13,6 +14,7 @@ pub fn build(b: *std.Build) void {
         .target = target,
         .optimize = optimize,
         .linkage = linkage,
+        .pic = pic,
     });
     const xau = xau_dep.artifact("xau");
     const xorgproto_dep = b.dependency("xorgproto", .{
@@ -40,7 +42,7 @@ pub fn build(b: *std.Build) void {
         .target = target,
         .optimize = optimize,
         .link_libc = true,
-        .pic = if (linkage == .dynamic) true else null,
+        .pic = pic,
     });
     mod.linkLibrary(xau);
     mod.linkLibrary(xorgproto);
@@ -51,6 +53,10 @@ pub fn build(b: *std.Build) void {
 
     mod.addCMacro("HAVE_CONFIG_H", "1");
     mod.addConfigHeader(config_h.config_header);
+
+    if (target.result.abi.isGnu()) {
+        mod.addCMacro("_GNU_SOURCE", "1");
+    }
 
     mod.addCSourceFiles(.{
         .root = xcb_dep.path("src"),

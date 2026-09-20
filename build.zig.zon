@@ -16,8 +16,8 @@
             .hash = "autoconfigheader-0.0.1-M7E_ZdAvAACUUzXpcsUySSgP_-ACO70YfZhNU7POHk1l",
         },
         .xau = .{
-            .url = "https://github.com/akunaakwei/zig-libxau/archive/b103e9a9f790c71e3780bd39bd6e0d7726f1cd9b.tar.gz",
-            .hash = "libxau-1.0.12-9JHeOBULAACzw5bhdDXwHVCnVeApTk7T3Ls7jLFoejJs",
+            .url = "https://github.com/akunaakwei/zig-libxau/archive/ef3465fc6e2ab6ebdfa7d16aa3b3c400ecc670ee.tar.gz",
+            .hash = "libxau-1.0.12-9JHeOFcLAAC8kIo73WK86laJ0MJIEitjWNoDkvcn_JxL",
         },
         .xorgproto = .{
             .url = "https://github.com/akunaakwei/zig-xorgproto/archive/9e416e104fa6067538c08e739de2862721a410cc.tar.gz",
